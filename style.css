@@ -1,4 +1,157 @@
+:root{
+    --main-green: #6c983e;
+    --my-listings-green: #456d21;
+    --major-background-color: #f9fafc;
+    --comment-color: #b5b6b8;
+    --my-listings-carousel: #fefefe;
+        --shadow-color: 94deg 45% 47%;
+        --shadow-elevation-low:
+          0px 0.7px 0.8px hsl(var(--shadow-color) / 0.34),
+          0px 1.2px 1.3px -1.2px hsl(var(--shadow-color) / 0.34),
+          0px 3px 3.4px -2.5px hsl(var(--shadow-color) / 0.34);
+        --shadow-elevation-medium:
+          0px 0.7px 0.8px hsl(var(--shadow-color) / 0.29),
+          0px 2px 2.3px -0.6px hsl(var(--shadow-color) / 0.29),
+          0px 3.8px 4.3px -1.2px hsl(var(--shadow-color) / 0.29),
+          0px 7.7px 8.7px -1.9px hsl(var(--shadow-color) / 0.29),
+          0px 14.8px 16.7px -2.5px hsl(var(--shadow-color) / 0.29);
+        --shadow-elevation-high:
+          0px 0.7px 0.8px hsl(var(--shadow-color) / 0.27),
+          0px 3.6px 4.1px -0.3px hsl(var(--shadow-color) / 0.27),
+          0px 6.3px 7.1px -0.6px hsl(var(--shadow-color) / 0.27),
+          0px 9.6px 10.8px -0.8px hsl(var(--shadow-color) / 0.27),
+          0px 14px 15.8px -1.1px hsl(var(--shadow-color) / 0.27),
+          0px 20.1px 22.6px -1.4px hsl(var(--shadow-color) / 0.27),
+          0px 28.6px 32.2px -1.7px hsl(var(--shadow-color) / 0.27),
+          0.1px 40.1px 45.1px -1.9px hsl(var(--shadow-color) / 0.27),
+          0.1px 55.1px 62px -2.2px hsl(var(--shadow-color) / 0.27),
+          0.1px 74.2px 83.5px -2.5px hsl(var(--shadow-color) / 0.27);
+}
+
 body{
-    display: grid;
     margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--major-background-color);
+}
+
+.container{
+    display: grid;
+    grid-template-areas: 'nav-bar main-sec main-sec main-sec main-sec'
+                         'nav-bar main-sec main-sec main-sec main-sec'
+                         'nav-bar main-sec main-sec main-sec main-sec'
+                         'nav-bar main-sec main-sec main-sec main-sec';
+    height: 90vh;
+    width: 90vw;
+    border-radius: 13px;
+    border: 0.5px solid var(--comment-color);
+}
+
+#heading{
+    grid-area: heading;
+}
+
+#nav-bar{
+    grid-area: nav-bar;
+    background-color: #ffffff;
+    border-right: solid 0.5px var(--comment-color);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    max-width: 170px;
+    border-radius: 13px 0 0 13px;
+}
+
+#nav-bar > div{
+    width: 100%;
+    min-height: 10px;
+
+}
+
+#nav-bar > #logo > ul{
+    color: var(--main-green);
+}
+
+ul{
+    list-style: none;
+    font-size: 13px;
+    text-align: left;
+    padding-left: 13px;
+    color: var(--comment-color);
+}
+
+#settings-menu > h4{
+    padding-left: 9px;
+    font-size: 8px;
+}
+
+
+#help-center-logo{
+    padding: 5px;
+    display: unset;
+    margin: auto;
+    border: 10px solid #ffffff;
+    border-radius: 50%;
+    width: 13px;
+    height: 13px;
+    box-shadow: var(--shadow-elevation-high);
+}
+
+#help-center{
+    max-width: 140px;
+    padding: 3px;
+    border-radius: 7px;
+    text-align: center;
+    background-image: url('/images/help-center-bg.jpg');
+    background-position: right;
+    background-size: cover;
+    box-shadow: var(--shadow-elevation-low);
+}
+
+#help-center> p{
+    font-size: 10px;
+}
+
+button{
+    background-color: #ffffff;
+    border-radius: 7px;
+    box-shadow: var(--shadow-elevation-high);
+    border: none;
+    margin-bottom: 12px;
+    font-size: 10px;
+    padding: 6px;
+}
+
+#main-sec{
+    grid-area: main-sec;
+    display: grid;
+    grid-template-areas: 'heading heading heading heading'
+                         'widget widget widget widget'
+                         'widget widget widget widget'
+                         'my-listings my-listings my-listings recent-activity'
+                         'my-listings my-listings my-listings recent-activity'
+                         'my-listings my-listings my-listings recent-activity'
+                         'my-listings my-listings my-listings recent-activity';
+}
+
+#my-listings{
+    grid-area: my-listings;
+}
+
+#my-listings > h3{
+    color: var(--my-listings-green);
+}
+
+#widgets{
+    grid-area: widget;
+}
+
+#recent-activity{
+    grid-area: recent-activity;
 }
