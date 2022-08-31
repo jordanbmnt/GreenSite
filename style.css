@@ -1,7 +1,7 @@
 :root{
     --main-green: #6c983e;
     --my-listings-green: #456d21;
-    --major-background-color: #f9fafc;
+    --major-background-color: #f7f8fa;
     --comment-color: #b5b6b8;
     --my-listings-carousel: #fefefe;
         --shadow-color: 94deg 45% 47%;
@@ -36,7 +36,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--major-background-color);
+    background-image: url('/images/Animated\ Shape.svg');
+    background-size: cover;
 }
 
 .container{
@@ -49,23 +50,74 @@ body{
     width: 90vw;
     border-radius: 13px;
     border: 0.5px solid var(--comment-color);
+    background-color: var(--major-background-color);
 }
 
 #heading{
     grid-area: heading;
+    display: flex;
+    flex-flow: row;
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+    height: min-content;
+}
+
+#heading > #welcome{
+    margin: 0 0 0 35px;
+    width: 40%;
+}
+
+
+#heading > #inp{
+    width: 30%;
+    height: 19px;
+    margin-top: 19px;
+    border: 0.5px solid #b5b6b823;
+    border-radius: 3px;
+    color: var(--comment-color);
+    font-size: 9px;
+}
+
+#heading > #welcome > h3{
+    margin-top: 9px;
+    margin-bottom: 0;
+}
+
+#heading > #welcome > p{
+    margin-top: 3px;
+    font-size: 10px;
+    color: var(--comment-color);
+}
+
+#icons > ul{
+    display: flex;
+    flex-flow: row;
+    margin: 13px 13px 0 0;
+}
+
+#icons > ul > li{
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 3px;
+    box-shadow: var(--shadow-elevation-low);
 }
 
 #nav-bar{
     grid-area: nav-bar;
     background-color: #ffffff;
-    border-right: solid 0.5px var(--comment-color);
+    border-right: solid 0.5px #b5b6b84d;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: space-between;
     padding: 24px 0;
-    max-width: 170px;
     border-radius: 13px 0 0 13px;
+    margin-right: 0;
+    justify-content: space-between;
 }
 
 #nav-bar > div{
@@ -76,6 +128,12 @@ body{
 
 #nav-bar > #logo > ul{
     color: var(--main-green);
+    font-size: 17px;
+    height: 17px;
+}
+
+li{
+    height: 25px;
 }
 
 ul{
@@ -138,6 +196,8 @@ button{
                          'my-listings my-listings my-listings recent-activity'
                          'my-listings my-listings my-listings recent-activity'
                          'my-listings my-listings my-listings recent-activity';
+    padding: 0;
+    margin: 0;
 }
 
 #my-listings{
