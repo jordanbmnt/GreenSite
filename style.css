@@ -40,56 +40,6 @@ body{
     background-size: cover;
 }
 
-.container{
-    display: grid;
-    grid-template-areas: 'nav-bar main-sec main-sec main-sec main-sec'
-                         'nav-bar main-sec main-sec main-sec main-sec'
-                         'nav-bar main-sec main-sec main-sec main-sec'
-                         'nav-bar main-sec main-sec main-sec main-sec';
-    height: 90vh;
-    width: 90vw;
-    border-radius: 13px;
-    border: 0.5px solid var(--comment-color);
-    background-color: var(--major-background-color);
-}
-
-#heading{
-    grid-area: heading;
-    display: flex;
-    flex-flow: row;
-    margin-left: 0;
-    width: 100%;
-    justify-content: space-between;
-    height: min-content;
-}
-
-#heading > #welcome{
-    margin: 0 0 0 35px;
-    width: 40%;
-}
-
-
-#heading > #inp{
-    width: 30%;
-    height: 19px;
-    margin-top: 19px;
-    border: 0.5px solid #b5b6b823;
-    border-radius: 3px;
-    color: var(--comment-color);
-    font-size: 9px;
-}
-
-#heading > #welcome > h3{
-    margin-top: 9px;
-    margin-bottom: 0;
-}
-
-#heading > #welcome > p{
-    margin-top: 3px;
-    font-size: 10px;
-    color: var(--comment-color);
-}
-
 #icons > ul{
     display: flex;
     flex-flow: row;
@@ -104,6 +54,33 @@ body{
     padding: 2px;
     border-radius: 3px;
     box-shadow: var(--shadow-elevation-low);
+}
+
+
+.container{
+    display: grid;
+    grid-template-areas: 'nav-bar main-sec main-sec main-sec main-sec'
+                         'nav-bar main-sec main-sec main-sec main-sec'
+                         'nav-bar main-sec main-sec main-sec main-sec'
+                         'nav-bar main-sec main-sec main-sec main-sec';
+    height: 90vh;
+    width: 90vw;
+    border-radius: 13px;
+    border: 0.5px solid var(--comment-color);
+    background-color: var(--major-background-color);
+    opacity: 0.89;
+}
+
+#main-sec{
+    grid-area: main-sec;
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    grid-template-columns: repeat(5, 1fr);
+    padding: 0;
+    margin: 0;
+    grid-auto-columns: auto;
+    grid-auto-flow: dense row;
+    grid-row-gap: 10px;
 }
 
 #nav-bar{
@@ -149,7 +126,6 @@ ul{
     font-size: 8px;
 }
 
-
 #help-center-logo{
     padding: 5px;
     display: unset;
@@ -166,7 +142,7 @@ ul{
     padding: 3px;
     border-radius: 7px;
     text-align: center;
-    background-image: url('/images/help-center-bg.jpg');
+    background-image: url('/images/help-center-bg.svg');
     background-position: right;
     background-size: cover;
     box-shadow: var(--shadow-elevation-low);
@@ -186,32 +162,66 @@ button{
     padding: 6px;
 }
 
-#main-sec{
-    grid-area: main-sec;
-    display: grid;
-    grid-template-areas: 'heading heading heading heading'
-                         'widget widget widget widget'
-                         'widget widget widget widget'
-                         'my-listings my-listings my-listings recent-activity'
-                         'my-listings my-listings my-listings recent-activity'
-                         'my-listings my-listings my-listings recent-activity'
-                         'my-listings my-listings my-listings recent-activity';
-    padding: 0;
-    margin: 0;
+#heading{
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    display: flex;
+    flex-flow: row;
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+    height: min-content;
+    border: 1px solid var(--comment-color);
+    margin-bottom: 0;
+}
+
+#heading > #welcome{
+    margin: 0 0 0 35px;
+    width: 40%;
+}
+
+#heading > #inp{
+    width: 30%;
+    height: 19px;
+    margin-top: 19px;
+    border: 0.5px solid #b5b6b823;
+    border-radius: 3px;
+    color: var(--comment-color);
+    font-size: 9px;
+}
+
+#heading > #welcome > h3{
+    margin-top: 9px;
+    margin-bottom: 0;
+}
+
+#heading > #welcome > p{
+    margin-top: 3px;
+    font-size: 10px;
+    color: var(--comment-color);
+}
+
+#widgets{
+    background-color: #6c983e;
+    grid-row: 2/3;
+    height: 200px;
+    grid-column: 1/-1;
 }
 
 #my-listings{
-    grid-area: my-listings;
+    grid-row: 3/4;
+    background-color: #6c983e;
+    height: 350px;
+    grid-column: 1/4;
 }
 
 #my-listings > h3{
     color: var(--my-listings-green);
 }
 
-#widgets{
-    grid-area: widget;
-}
-
 #recent-activity{
-    grid-area: recent-activity;
+    grid-row: 3/4;
+    background-color: #9ca98d;
+    height: 350px;
+    grid-column: 4/-1;
 }
