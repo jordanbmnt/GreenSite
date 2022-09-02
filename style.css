@@ -66,8 +66,12 @@ body{
     height: 90vh;
     width: 90vw;
     border-radius: 13px;
-    border: 0.5px solid var(--comment-color);
     background-color: var(--major-background-color);
+    opacity: 0.85;
+    transition: 6ms;
+}
+
+.container:hover{
     opacity: 0.89;
 }
 
@@ -171,7 +175,6 @@ button{
     width: 100%;
     justify-content: space-between;
     height: min-content;
-    border: 1px solid var(--comment-color);
     margin-bottom: 0;
 }
 
@@ -202,15 +205,40 @@ button{
 }
 
 #widgets{
-    background-color: #6c983e;
     grid-row: 2/3;
     height: 200px;
     grid-column: 1/-1;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    overflow-x: scroll; 
+}
+
+.tabs{
+    border-radius: 7px;
+    margin: 0 10px;
+    height: 150px;
+}
+
+#main-tab{
+    width: 60%;
+    background-image: url('/images/dark-plant.jpg');
+    background-position: center;
+    background-size: cover;
+    filter: brightness(0.6);
+}
+
+#secondary-tab{
+    width: 40%;
+    background-image: url('/images/help-center-bg.svg');
+    background-position: center;
+    background-size: cover;
+    filter: opacity(0.6);
 }
 
 #my-listings{
     grid-row: 3/4;
-    background-color: #6c983e;
+    border: solid 0.5px #b5b6b8ce;
     height: 350px;
     grid-column: 1/4;
 }
@@ -221,7 +249,7 @@ button{
 
 #recent-activity{
     grid-row: 3/4;
-    background-color: #9ca98d;
+    border: solid 0.5px #b5b6b8b6;
     height: 350px;
     grid-column: 4/-1;
 }
