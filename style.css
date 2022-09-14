@@ -265,6 +265,7 @@ button{
     margin: 3px 0;
 }
 
+#secondary-tab-info > h1,
 #main-tab > h1{
     font-size: 20px;
 }
@@ -274,11 +275,50 @@ button{
 }
 
 #secondary-tab{
+    display: flex;
+    flex-flow: row;
     width: 40%;
     background-image: url('/images/help-center-bg.svg');
     background-position: center;
     background-size: cover;
-    filter: opacity(0.6);
+    /* filter: opacity(0.6); */
+    padding: 1px 20px;
+    color: rgb(50, 36, 36);
+}
+
+#secondary-tab-info{
+    width: 80%;
+}
+
+#secondary-tab-info > h1{
+    margin-bottom: 5px;
+}
+
+#secondary-tab-stats{
+    display: flex;
+    flex-flow: row;
+}
+
+.my-stats-info > p{
+    margin: 4px 0px;
+}
+
+#my-stats-orders,
+.my-stats-info > p:nth-child(1){
+    font-size: 8px;
+}
+
+.my-stats-info > p:nth-child(2){
+    font-size: 11px;
+}
+
+#my-stats-orders{
+    margin-top: 40px;
+}
+
+#secondary-stat-img{
+    width: 100%;
+    height: 90%;
 }
 
 #my-listings{
