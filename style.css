@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
+
 :root{
     --main-green: #6c983e;
     --my-listings-green: #456d21;
@@ -27,6 +29,16 @@
           0.1px 55.1px 62px -2.2px hsl(var(--shadow-color) / 0.27),
           0.1px 74.2px 83.5px -2.5px hsl(var(--shadow-color) / 0.27);
 }
+
+*{
+    overflow: scroll;
+    font-family: 'Cabin Sketch', cursive;
+    font-weight: 700;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+  }
 
 body{
     margin: 0;
@@ -63,7 +75,7 @@ body{
                          'nav-bar main-sec main-sec main-sec main-sec'
                          'nav-bar main-sec main-sec main-sec main-sec';
     height: 90vh;
-    width: 90vw;
+    width: 900px;
     border-radius: 13px;
     background-color: var(--major-background-color);
     opacity: 0.85;
@@ -94,7 +106,7 @@ body{
     flex-flow: column;
     align-items: center;
     justify-content: space-between;
-    padding: 24px 0;
+    padding: 25px 15px;
     border-radius: 13px 0 0 13px;
     margin-right: 0;
     justify-content: space-between;
@@ -220,11 +232,45 @@ button{
 }
 
 #main-tab{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
     width: 60%;
     background-image: url('/images/dark-plant.jpg');
     background-position: center;
     background-size: cover;
-    filter: brightness(0.6);
+    padding: 1px 24px;
+}
+
+.main-tab-btn{
+    margin: 20px 0;
+    padding: 9px;
+    box-shadow: none;
+}
+
+.main-tab-btn:nth-child(1){
+    color: var(--main-green);
+}
+
+.main-tab-btn:nth-child(2){
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    margin-left: 5px;
+}
+
+#main-tab > h1,
+#main-tab > p{
+    color: var(--main-green);
+    margin: 3px 0;
+}
+
+#main-tab > h1{
+    font-size: 20px;
+}
+
+#main-tab > p{
+    font-size: 12px;
 }
 
 #secondary-tab{
@@ -269,11 +315,15 @@ button{
 }
 
 .my-listing-cards{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
     padding: 3%;
     font-size: 10px;
     border-radius: 10px;
-    width: 11vw;
-    height: 23vh;
+    width: 105px;
+    height: 160px;
     border: solid 0.5px #b5b6b853;
     background-color: white;
 }
@@ -327,7 +377,50 @@ button{
 
 #recent-activity{
     grid-row: 3/4;
-    /* border: solid 0.5px #b5b6b8b6; */
     height: 350px;
     grid-column: 4/-1;
+}
+
+.recent-activity-cards{
+    margin: 8px;
+}
+
+.recent-activity-cards > .sec-heading-format{
+    align-items: flex-start;
+}
+
+.sec-heading-format > .recent-activity-card-info{
+    border: none;
+}
+
+.recent-activity-card-info > h5{
+    font-size: 10px;
+    margin: 0;
+    padding: 0 auto;
+}
+
+.recent-activity-cards-container{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.recent-activity-card-info > p,
+.time{
+    margin: 0;
+    color: var(--comment-color);
+    font-size: 9px;
+}
+
+.plantImg{
+    width: 60%;
+}
+
+.profile_picture{
+    width: 10%;
+}
+
+.multiple_profile_picture{
+    width: 20%;
 }
